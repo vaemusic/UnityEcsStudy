@@ -8,17 +8,20 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
-    public const int InputComp = 0;
-    public const int InputSystem = 1;
+    public const int IdComp = 0;
+    public const int InputComp = 1;
+    public const int InputSystem = 2;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
+        "IdComp",
         "InputComp",
         "InputSystem"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(IdComp),
         typeof(InputComp),
         typeof(InputSystemComponent)
     };

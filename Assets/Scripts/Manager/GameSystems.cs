@@ -4,9 +4,14 @@
     {
         //生成玩家
         Add(new PlayerSpawnSystem(contexts));
+        //生成敌人
+        Add(new EnemySpawnSystem(contexts));
         //玩家输入
         Add(new InputSystem(contexts));
         Add(new PlayerInputProcessSystem(contexts));
+
+        //目标系统
+        Add(new FollowTargetSystem(contexts));
 
         //移动和旋转
         Add(new MoveSystem(contexts));

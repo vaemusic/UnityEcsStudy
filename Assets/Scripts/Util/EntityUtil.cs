@@ -27,6 +27,7 @@ public class EntityUtil
     public static GameEntity CreateBulletEntity(Contexts contexts, Vector2 pos, Vector2 vel, float angle = 0)
     {
         var bulletEntity = contexts.game.CreateEntity();
+        bulletEntity.isBulletTag = true;
         //添加组件
         bulletEntity.AddPosComp(pos);
         bulletEntity.AddVelComp(vel);
@@ -35,5 +36,18 @@ public class EntityUtil
         bulletEntity.AddLifetimeComp(1);
 
         return bulletEntity;
+    }
+
+    public static GameEntity CreateEnemyEntity(Contexts contexts, Vector2 pos, Vector2 vel, float angle = 0)
+    {
+        //创建entity,Entity表示一个实体，用来存储数据用的
+        var enemyEntity = contexts.game.CreateEntity();
+        enemyEntity.isEnemyTag = true;
+        //添加组件
+        enemyEntity.AddPosComp(pos);
+        enemyEntity.AddVelComp(Vector2.zero);
+        enemyEntity.AddRotComp(angle);
+        enemyEntity.AddCreateGameObjectCmdComp("Enemy");
+        return enemyEntity;
     }
 }

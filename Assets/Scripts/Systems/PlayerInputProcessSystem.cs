@@ -45,7 +45,7 @@ public class PlayerInputProcessSystem : ReactiveSystem<InputEntity>
             //鼠标位置减玩家位置，得到方向向量
             var dir = new Vector2(worldPos.x,worldPos.y) - playerEntity.posComp.value;
             //方向向量转换为角度，通过 vector2.up 和 刚才得到的玩家和鼠标的方向向量 的一个夹角
-            var angle = Vector2.SignedAngle(Vector2.up, dir);
+            var angle = dir.Vector2Angle2D();
             //最后赋值给playerEntity的rotation
             playerEntity.ReplaceRotComp(angle);
 
