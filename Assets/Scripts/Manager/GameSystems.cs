@@ -26,6 +26,9 @@
         Add(new LifeTimeSystem(contexts));
 
         Add(new GameEventSystems(contexts));
+
+        //同步位置
+        Add(new SyncPosSystem(contexts));
         //清理
         Add(new InputCleanupSystem(contexts));
         //销毁系统
