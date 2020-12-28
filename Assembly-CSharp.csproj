@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
@@ -62,47 +62,60 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Generated\Components\InputSystemComponent.cs" />
-    <Compile Include="Assets\Generated\Contexts.cs" />
-    <Compile Include="Assets\Generated\Events\Components\DestroyFlagListenerComponent.cs" />
-    <Compile Include="Assets\Generated\Events\GameEventSystems.cs" />
-    <Compile Include="Assets\Generated\Events\Interfaces\IDestroyFlagListener.cs" />
-    <Compile Include="Assets\Generated\Events\Systems\DestroyFlagEventSystem.cs" />
-    <Compile Include="Assets\Generated\Feature.cs" />
+    <Compile Include="Assets\Generated\Game\Components\GamePlayerTagComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GameCreateGameObjectCmdCompComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GameDestroyFlagComponent.cs" />
-    <Compile Include="Assets\Generated\Game\Components\GameDestroyFlagListenerComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GameFireCmdCompComponent.cs" />
+    <Compile Include="Assets\Generated\Game\Components\GameIdCompComponent.cs" />
+    <Compile Include="Assets\Generated\Input\Components\InputIdCompComponent.cs" />
+    <Compile Include="Assets\Generated\Input\Components\InputInputCompComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GameLifetimeCompComponent.cs" />
-    <Compile Include="Assets\Generated\Game\Components\GamePlayerTagComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GamePosCompComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GameRotCompComponent.cs" />
+    <Compile Include="Assets\Generated\Game\Components\GameBulletTagComponent.cs" />
+    <Compile Include="Assets\Generated\Game\Components\GameEnemyTagComponent.cs" />
+    <Compile Include="Assets\Generated\Game\Components\GameTargetCompComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GameVelCompComponent.cs" />
     <Compile Include="Assets\Generated\Game\Components\GameViewCompComponent.cs" />
-    <Compile Include="Assets\Generated\Game\GameAttribute.cs" />
-    <Compile Include="Assets\Generated\Game\GameComponentsLookup.cs" />
-    <Compile Include="Assets\Generated\Game\GameContext.cs" />
-    <Compile Include="Assets\Generated\Game\GameEntity.cs" />
-    <Compile Include="Assets\Generated\Game\GameMatcher.cs" />
-    <Compile Include="Assets\Generated\Input\Components\InputInputCompComponent.cs" />
     <Compile Include="Assets\Generated\Input\Components\InputInputSystemComponent.cs" />
-    <Compile Include="Assets\Generated\Input\InputAttribute.cs" />
+    <Compile Include="Assets\Generated\Game\Components\GameDestroyFlagListenerComponent.cs" />
+    <Compile Include="Assets\Generated\Components\Interfaces\IIdCompEntity.cs" />
+    <Compile Include="Assets\Generated\Components\InputSystemComponent.cs" />
+    <Compile Include="Assets\Generated\Game\GameComponentsLookup.cs" />
     <Compile Include="Assets\Generated\Input\InputComponentsLookup.cs" />
+    <Compile Include="Assets\Generated\Game\GameAttribute.cs" />
+    <Compile Include="Assets\Generated\Input\InputAttribute.cs" />
+    <Compile Include="Assets\Generated\Game\GameContext.cs" />
     <Compile Include="Assets\Generated\Input\InputContext.cs" />
-    <Compile Include="Assets\Generated\Input\InputEntity.cs" />
+    <Compile Include="Assets\Generated\Game\GameMatcher.cs" />
     <Compile Include="Assets\Generated\Input\InputMatcher.cs" />
+    <Compile Include="Assets\Generated\Contexts.cs" />
+    <Compile Include="Assets\Generated\Game\GameEntity.cs" />
+    <Compile Include="Assets\Generated\Input\InputEntity.cs" />
+    <Compile Include="Assets\Generated\Events\Components\DestroyFlagListenerComponent.cs" />
+    <Compile Include="Assets\Generated\Events\Interfaces\IDestroyFlagListener.cs" />
+    <Compile Include="Assets\Generated\Events\Systems\DestroyFlagEventSystem.cs" />
+    <Compile Include="Assets\Generated\Events\GameEventSystems.cs" />
+    <Compile Include="Assets\Generated\Feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Libs\DesperateDevs\Compile.cs" />
     <Compile Include="Assets\Scripts\Components\CreateGameObjectCmdComp.cs" />
     <Compile Include="Assets\Scripts\Components\DestroyFlag.cs" />
     <Compile Include="Assets\Scripts\Components\FireCmdComp.cs" />
+    <Compile Include="Assets\Scripts\Components\IdComp.cs" />
     <Compile Include="Assets\Scripts\Components\InputComp.cs" />
     <Compile Include="Assets\Scripts\Components\LifetimeComp.cs" />
-    <Compile Include="Assets\Scripts\Components\PlayerTag.cs" />
     <Compile Include="Assets\Scripts\Components\PosComp.cs" />
     <Compile Include="Assets\Scripts\Components\RotComp.cs" />
+    <Compile Include="Assets\Scripts\Components\Tags\BulletTag.cs" />
+    <Compile Include="Assets\Scripts\Components\Tags\EnemyTag.cs" />
+    <Compile Include="Assets\Scripts\Components\Tags\PlayerTag.cs" />
+    <Compile Include="Assets\Scripts\Components\TargetComp.cs" />
     <Compile Include="Assets\Scripts\Components\VelComp.cs" />
     <Compile Include="Assets\Scripts\Components\ViewComp.cs" />
     <Compile Include="Assets\Scripts\Hybrid\BulletView.cs" />
+    <Compile Include="Assets\Scripts\Hybrid\EnemyView.cs" />
     <Compile Include="Assets\Scripts\Hybrid\IView.cs" />
     <Compile Include="Assets\Scripts\Hybrid\PlayerView.cs" />
     <Compile Include="Assets\Scripts\Hybrid\View.cs" />
@@ -113,7 +126,9 @@
     <Compile Include="Assets\Scripts\Other\Extension.cs" />
     <Compile Include="Assets\Scripts\Systems\AddViewSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\DestroySystem.cs" />
+    <Compile Include="Assets\Scripts\Systems\EnemySpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\FireSystem.cs" />
+    <Compile Include="Assets\Scripts\Systems\FollowTargetSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\InputCleanupSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\InputSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\LifetimeSystem.cs" />
@@ -705,7 +720,6 @@
       <HintPath>D:/unity-pro/ECS-study/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //注册id
+        var contexts = Contexts.sharedInstance;
+        contexts.SubscribeId();
+
         //初始化系统，只在第一次执行
         _gameSystems.Initialize();
     }
